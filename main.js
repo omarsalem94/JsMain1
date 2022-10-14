@@ -20,15 +20,11 @@ let playerResponse = confirm('Do you want to play?');
 // based on the user's response we either start the game or don't
 if (playerResponse) {
 
-  //  In this function we compare both the values of both the user and computer and then determine a winner
+  //  In this function we compare the values of both the user and computer and then determine a winner
   function playRound() {
     let victor;
     let playerSelection = prompt('Play with the computer. Choose Rock, Paper or Scissors and write it down').toLowerCase();
-    if (playerSelection === 'rock' && computerSelection === 'rock') {
-      console.log(`That's a tie! Both chose ${playerSelection}.`);
-    } else if (playerSelection === 'paper' && computerSelection === 'paper') {
-      console.log(`That's a tie! Both chose ${playerSelection}.`);
-    } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
+    if (playerSelection === computerSelection) {
       console.log(`That's a tie! Both chose ${playerSelection}.`);
     } else if (playerSelection === 'rock' && computerSelection === 'scissors' || playerSelection === 'scissors' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'rock') {
       victor = 'human';
