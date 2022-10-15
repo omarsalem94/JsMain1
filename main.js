@@ -49,6 +49,13 @@ if (playerResponse) {
       playRound();
     }
     console.log(`You have played 5 rounds and won ${human} round/s!`);
+    if (human > computer) {
+      alert('You won!!');
+    } else if (human === computer) {
+      alert('draw!');
+    } else {
+      alert('Computer Won');
+    }
   }
   game();
 } else {
