@@ -5,12 +5,13 @@
 let computer = 0;
 let human = 0;
 
+let choices = ['rock', 'paper', 'scissors'];
+
 
 
 // a function to randomly make the computer choose a value
 function computerPlay() {
   let random = Math.floor(Math.random() * 3);
-  let choices = ['rock', 'paper', 'scissors'];
   return choices[random];
 }
 
@@ -24,7 +25,10 @@ if (playerResponse) {
   function playRound() {
     let victor;
     let playerSelection = prompt('Play with the computer. Choose Rock, Paper or Scissors and write it down').toLowerCase();
-    if (playerSelection === computerSelection) {
+    if (!choices.includes(playerSelection)) {
+      alert('Wrong input!');
+      return playRound();
+    } else if (playerSelection === computerSelection) {
       console.log(`That's a tie! Both chose ${playerSelection}.`);
     } else if (playerSelection === 'rock' && computerSelection === 'scissors' || playerSelection === 'scissors' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'rock') {
       victor = 'human';
@@ -32,8 +36,6 @@ if (playerResponse) {
     } else if (playerSelection === 'rock' && computerSelection === 'paper' || playerSelection === 'scissors' && computerSelection === 'rock' || playerSelection === 'paper' && computerSelection === 'scissors') {
       victor = 'computer';
       console.log(`You lose. ${computerSelection} beats ${playerSelection}.`);
-    } else {
-      alert(`Enter a valid value!`);
     }
     // Here we keep track of how many times the user have won
     if (victor === 'human') {
