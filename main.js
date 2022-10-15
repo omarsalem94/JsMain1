@@ -30,10 +30,14 @@ if (playerResponse) {
       return playRound();
     } else if (playerSelection === computerSelection) {
       console.log(`That's a tie! Both chose ${playerSelection}.`);
-    } else if (playerSelection === 'rock' && computerSelection === 'scissors' || playerSelection === 'scissors' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'rock') {
+    } else if (
+      playerSelection === 'rock' && computerSelection === 'scissors' || 
+      playerSelection === 'scissors' && computerSelection === 'paper' || 
+      playerSelection === 'paper' && computerSelection === 'rock'
+      ) {
       victor = 'human';
       console.log(`You win!!! ${playerSelection} beats ${computerSelection}.`);
-    } else if (playerSelection === 'rock' && computerSelection === 'paper' || playerSelection === 'scissors' && computerSelection === 'rock' || playerSelection === 'paper' && computerSelection === 'scissors') {
+    } else {
       victor = 'computer';
       console.log(`You lose. ${computerSelection} beats ${playerSelection}.`);
     }
